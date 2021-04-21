@@ -4,13 +4,10 @@ import chalk from 'chalk'
 
 import getName from './name'
 import getText from './text'
-import { ORIGIN, NAME_MAX_LENGTH } from './constants'
+import { ORIGIN } from './constants'
 
 const getLink = async (path: string, name: string | undefined) => {
 	name = getName(name || path)
-
-	if (name.length > NAME_MAX_LENGTH)
-		throw new Error(`The filename '${name}' is too long`)
 
 	process.stdout.write(chalk`{gray.bold snipping...}\r`)
 
