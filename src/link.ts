@@ -17,11 +17,12 @@ const getLink = async (path: string, name: string | undefined) => {
 		body: JSON.stringify({ name, text: await getText(path) })
 	})
 
-	const text = await response.text()
-	if (response.status !== 200) throw new Error(text)
+	if (response.status !== 200) throw new Error(await response.text())
 
-	await clipboard.write(text)
-	return text
+	const link = `${ORIGIN}/${await response.text()}`
+	await clipboard.write(link)
+
+	return link
 }
 
 export default getLink
