@@ -1,7 +1,7 @@
 {
 	"name": "snip-page",
 	"description": "Share code",
-	"version": "1.0.4",
+	"version": "1.1.0",
 	"main": "lib/index.js",
 	"bin": {
 		"snip": "lib/index.js"
